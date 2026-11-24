@@ -913,7 +913,7 @@ const GOOGLE_SYNC_URL = "https://google.com";
         let next=readState({...state,settings});
         const newUrl=httpsUrl(settings.syncUrl), changed=newUrl!==httpsUrl(state.settings.syncUrl);
         let nextVersion=cloudVersion;
-        if (changed && newUrl.replace(/\/$/,"")!=="https://google.com") {
+        if (changed && newUrl.replace(/\/$/,"")!=="https://script.google.com/macros/s/AKfycbz6rsnPDjn9WfzuAbkNs2FnFyNjL_OawjeSRFgo3Fwcu5YGHVO6Qm3_Lx1m1BZGpH8X/exec") {
           const start=revision; const button=$('button[type="submit"]',form);
           button.disabled=true;status("Проверка каталога по новому адресу…");
           let remote;
