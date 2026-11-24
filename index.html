@@ -377,7 +377,7 @@ input[type="file"]::file-selector-button {color:var(--white);border:1px solid #3
   <div id="notice" role="status" aria-live="polite"></div>
   <script>
   function startBundledSmartPro() {
-const GOOGLE_SYNC_URL = "https://google.com";
+const GOOGLE_SYNC_URL = "https://script.google.com/macros/s/AKfycbz6rsnPDjn9WfzuAbkNs2FnFyNjL_OawjeSRFgo3Fwcu5YGHVO6Qm3_Lx1m1BZGpH8X/exec";
 
 (() => {
   "use strict";
@@ -537,7 +537,7 @@ const GOOGLE_SYNC_URL = "https://google.com";
     const auth = JSON.parse(sessionStorage.getItem(SESSION + ".cloud"));
     if (authenticated && auth) { writeKey = auth.key; keyUrl = auth.url; }
   } catch { /* Memory-only session. */ }
-  if (state.settings.syncUrl.replace(/\/$/,"") === "https://google.com" && GOOGLE_SYNC_URL !== "https://google.com") state.settings.syncUrl=GOOGLE_SYNC_URL;
+  if (state.settings.syncUrl.replace(/\/$/,"") === "https://script.google.com/macros/s/AKfycbz6rsnPDjn9WfzuAbkNs2FnFyNjL_OawjeSRFgo3Fwcu5YGHVO6Qm3_Lx1m1BZGpH8X/exec" && GOOGLE_SYNC_URL !== "https://script.google.com/macros/s/AKfycbz6rsnPDjn9WfzuAbkNs2FnFyNjL_OawjeSRFgo3Fwcu5YGHVO6Qm3_Lx1m1BZGpH8X/exec") state.settings.syncUrl=GOOGLE_SYNC_URL;
   const ui = {query:"", category:"Все товары",sort:"featured",slide:0};
   let publishing = false, cloudStatus = "", toastTimer = 0, uploadVersion = 0;
   let editorDirty = false;
@@ -556,7 +556,7 @@ const GOOGLE_SYNC_URL = "https://google.com";
   }
   function endpoint() {
     const url = httpsUrl(state.settings.syncUrl);
-    if (!url || url.replace(/\/$/,"") === "https://google.com") return "";
+    if (!url || url.replace(/\/$/,"") === "https://script.google.com/macros/s/AKfycbz6rsnPDjn9WfzuAbkNs2FnFyNjL_OawjeSRFgo3Fwcu5YGHVO6Qm3_Lx1m1BZGpH8X/exec") return "";
     return url;
   }
   // Only signatures leave this session. The public catalog and backups contain no write key.
@@ -581,7 +581,7 @@ const GOOGLE_SYNC_URL = "https://google.com";
         const body = JSON.stringify(payload);
         url = await signedUrl(url,body);
         Object.assign(options,{method:"POST",headers:{"Content-Type":"text/plain;charset=utf-8"},body});
-      } else if (url.replace(/\/$/,"") === "https://google.com") {
+      } else if (url.replace(/\/$/,"") === "https://script.google.com/macros/s/AKfycbz6rsnPDjn9WfzuAbkNs2FnFyNjL_OawjeSRFgo3Fwcu5YGHVO6Qm3_Lx1m1BZGpH8X/exec") {
         // The supplied placeholder cannot serve cross-origin JSON.
         options.mode = "no-cors";
       }
